@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #0a0a0a;
+  --foreground: #ffffff;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Prose styling for MDX blog posts */
+.prose {
+  color: #d1d5db;
+  max-width: 65ch;
+}
+.prose h1, .prose h2, .prose h3, .prose h4 {
+  color: #ffffff;
+  font-weight: 700;
+}
+.prose h1 { font-size: 2.25rem; margin-top: 2rem; margin-bottom: 1rem; }
+.prose h2 { font-size: 1.75rem; margin-top: 1.75rem; margin-bottom: 0.75rem; }
+.prose h3 { font-size: 1.375rem; margin-top: 1.5rem; margin-bottom: 0.5rem; }
+.prose p { margin-bottom: 1.25rem; line-height: 1.75; }
+.prose a { color: #9333EA; text-decoration: underline; }
+.prose a:hover { color: #7B2FBE; }
+.prose ul, .prose ol { margin-bottom: 1.25rem; padding-left: 1.5rem; }
+.prose ul { list-style-type: disc; }
+.prose ol { list-style-type: decimal; }
+.prose li { margin-bottom: 0.5rem; }
+.prose blockquote {
+  border-left: 4px solid #7B2FBE;
+  padding-left: 1rem;
+  font-style: italic;
+  color: #9ca3af;
+  margin-bottom: 1.25rem;
+}
+.prose strong { color: #ffffff; }
+.prose img { border-radius: 0.5rem; margin: 1.5rem 0; }
+.prose hr { border-color: #1e1e1e; margin: 2rem 0; }
