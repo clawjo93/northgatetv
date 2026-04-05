@@ -63,12 +63,13 @@ export const videos: Video[] = [
   },
   {
     id: "5",
-    title: "Street Quiz: How Smart Are You Really?",
-    description: "We quizzed random people on the street. The results were... interesting.",
-    thumbnail: "/images/placeholder-video-5.jpg",
+    title: "NorthgateTV — Street Interviews Vol. 2",
+    description: "More real people, more real answers. Street interviews from Northgate.",
+    thumbnail: "https://img.youtube.com/vi/YBPBIJMn07I/maxresdefault.jpg",
     category: "Street Interviews",
-    date: "2026-02-28",
-    videoUrl: "#",
+    date: "2026-04-05",
+    videoUrl: "https://youtu.be/YBPBIJMn07I",
+    youtubeId: "YBPBIJMn07I",
   },
   {
     id: "6",
