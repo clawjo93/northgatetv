@@ -11,15 +11,15 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: "NorthgateTV — College Station Nightlife & Street Interviews",
+    default: "NorthgateTV — Street Interviews & Nightlife",
     template: "%s | NorthgateTV",
   },
   description:
-    "NorthgateTV covers the best nightlife, bars, and street interviews on Northgate in College Station, Texas. Made for Texas A&M students.",
+    "Street interviews, bar culture, and real nightlife content.",
   openGraph: {
-    title: "NorthgateTV — College Station Nightlife & Street Interviews",
+    title: "NorthgateTV — Street Interviews & Nightlife",
     description:
-      "NorthgateTV covers the best nightlife, bars, and street interviews on Northgate in College Station, Texas.",
+      "Street interviews, bar culture, and real nightlife content.",
     url: "https://northgatetv.com",
     siteName: "NorthgateTV",
     locale: "en_US",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "NorthgateTV",
     description:
-      "College Station nightlife, bar reviews, and street interviews for Texas A&M students.",
+      "Street interviews, bar culture, and real nightlife content.",
   },
   metadataBase: new URL("https://northgatetv.com"),
 };
@@ -43,7 +43,7 @@ export default function RootLayout({
     <html lang="en" className="dark">
       <body className={`${inter.variable} font-sans antialiased bg-dark text-white`}>
         <Navbar />
-        <main className="min-h-screen">{children}</main>
+        <main>{children}</main>
         <Footer />
       </body>
     </html>

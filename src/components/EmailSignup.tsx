@@ -27,32 +27,34 @@ export default function EmailSignup() {
   }
 
   return (
-    <section className="bg-primary/10 border border-primary/20 rounded-2xl p-8 md:p-12">
-      <div className="max-w-2xl mx-auto text-center">
-        <h2 className="text-2xl md:text-3xl font-bold text-white">
-          Get the Weekly Northgate Guide
+    <section className="relative max-w-4xl mx-auto rounded-2xl overflow-hidden grain-overlay">
+      <div className="absolute inset-0 bg-gradient-to-r from-primary/30 via-primary/10 to-primary/30" />
+      <div className="absolute inset-0 bg-dark/80" />
+      <div className="relative z-10 px-6 py-16 md:py-20 text-center">
+        <h2 className="text-3xl md:text-4xl font-black text-white uppercase tracking-tight">
+          Get the Inside Scoop
         </h2>
-        <p className="mt-3 text-gray-400">
-          Best bars, events, and exclusive content delivered to your inbox every Thursday.
+        <p className="mt-4 text-gray-400 text-sm md:text-base max-w-lg mx-auto">
+          Weekly drops, bar guides, and exclusive content. No spam.
         </p>
         {status === "success" ? (
-          <p className="mt-6 text-green-400 font-medium">You&apos;re in! Check your inbox.</p>
+          <p className="mt-8 text-green-400 font-bold uppercase tracking-wider text-sm">You&apos;re in! Check your inbox.</p>
         ) : (
-          <form onSubmit={handleSubmit} className="mt-6 flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+          <form onSubmit={handleSubmit} className="mt-8 flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
             <input
               type="email"
               required
               placeholder="your@email.com"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="flex-1 px-4 py-3 bg-dark border border-dark-border rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-primary transition-colors"
+              className="flex-1 px-5 py-3.5 bg-dark border border-dark-border rounded-full text-white placeholder-gray-500 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/30 transition-all text-sm"
             />
             <button
               type="submit"
               disabled={status === "loading"}
-              className="px-6 py-3 bg-primary hover:bg-primary-light text-white font-medium rounded-lg transition-colors disabled:opacity-50"
+              className="px-8 py-3.5 bg-primary hover:bg-primary-light text-white font-black text-sm tracking-[0.15em] uppercase rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary/30 disabled:opacity-50 disabled:hover:scale-100"
             >
-              {status === "loading" ? "Joining..." : "Subscribe"}
+              {status === "loading" ? "..." : "JOIN"}
             </button>
           </form>
         )}

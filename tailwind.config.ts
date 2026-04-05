@@ -17,11 +17,14 @@ const config: Config = {
         dark: {
           DEFAULT: "#0a0a0a",
           card: "#111111",
-          border: "#1e1e1e",
+          border: "#1f1f1f",
         },
       },
       fontFamily: {
         sans: ["var(--font-inter)", "system-ui", "sans-serif"],
+      },
+      animation: {
+        "bounce-slow": "bounce 2s infinite",
       },
     },
   },

@@ -7,9 +7,48 @@
   --foreground: #ffffff;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   color: var(--foreground);
   background: var(--background);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+::-webkit-scrollbar-thumb {
+  background: #7B2FBE;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #9333EA;
+}
+
+/* Selection color */
+::selection {
+  background: #7B2FBE;
+  color: #ffffff;
+}
+
+/* Noise/grain texture overlay */
+.grain-overlay {
+  position: relative;
+}
+.grain-overlay::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  pointer-events: none;
+  z-index: 1;
 }
 
 @layer utilities {
@@ -46,4 +85,4 @@ body {
 }
 .prose strong { color: #ffffff; }
 .prose img { border-radius: 0.5rem; margin: 1.5rem 0; }
-.prose hr { border-color: #1e1e1e; margin: 2rem 0; }
+.prose hr { border-color: #1f1f1f; margin: 2rem 0; }

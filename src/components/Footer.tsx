@@ -11,6 +11,15 @@ const socialLinks = [
   { label: "X", href: "https://x.com/northgatetv", icon: "M18.9 1.2h3.7l-8.1 9.3L24 22.8h-7.5l-5.8-7.6-6.7 7.6H.3l8.7-9.9L0 1.2h7.7l5.3 7 6-7zM17.6 20.6h2l-13-13.4h-2.2l13.2 13.4z" },
 ];
 
+const footerLinks = [
+  { label: "Videos", href: "/videos" },
+  { label: "Gallery", href: "/gallery" },
+  { label: "Blog", href: "/blog" },
+  { label: "Merch", href: "/merch" },
+  { label: "Advertise", href: "/advertise" },
+  { label: "About", href: "/about" },
+];
+
 export default function Footer() {
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
@@ -36,78 +45,48 @@ export default function Footer() {
   }
 
   return (
-    <footer className="bg-dark border-t border-dark-border">
-      {/* Newsletter signup */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-8">
-        <div className="bg-primary/10 border border-primary/20 rounded-xl p-6 md:p-8 text-center">
-          <h3 className="text-xl md:text-2xl font-bold text-white">Stay in the loop</h3>
-          <p className="mt-2 text-sm text-gray-400">Get the latest videos, events, and exclusive content straight to your inbox.</p>
-          {status === "success" ? (
-            <p className="mt-4 text-green-400 font-medium">You&apos;re in! Check your inbox.</p>
-          ) : (
-            <form onSubmit={handleSubmit} className="mt-4 flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-              <input
-                type="email"
-                required
-                placeholder="your@email.com"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="flex-1 px-4 py-2.5 bg-dark border border-dark-border rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-primary transition-colors text-sm"
-              />
-              <button
-                type="submit"
-                disabled={status === "loading"}
-                className="px-5 py-2.5 bg-primary hover:bg-primary-light text-white font-medium rounded-lg transition-colors disabled:opacity-50 text-sm"
-              >
-                {status === "loading" ? "Joining..." : "Subscribe"}
-              </button>
-            </form>
-          )}
-          {status === "error" && (
-            <p className="mt-2 text-red-400 text-sm">Something went wrong. Try again.</p>
-          )}
-        </div>
-      </div>
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <footer className="bg-dark-card border-t border-dark-border">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {/* Brand */}
           <div>
-            <Link href="/">
-              <Image src="/logo.png" alt="NorthgateTV" width={56} height={56} className="h-12 w-auto" />
+            <Link href="/" className="inline-block">
+              <div className="bg-white rounded-md p-1 inline-block">
+                <Image src="/logo.png" alt="NorthgateTV" width={48} height={48} className="h-10 w-auto" />
+              </div>
             </Link>
-            <p className="mt-3 text-sm text-gray-400">
-              Nightlife and street interview content brand. Real stories from the strip.
+            <p className="mt-4 text-sm text-gray-400 leading-relaxed">
+              Street interviews, bar culture, and real nightlife content.
             </p>
           </div>
 
-          {/* Links */}
+          {/* Navigation */}
           <div>
-            <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">Pages</h3>
-            <div className="space-y-2">
-              {["Videos", "Gallery", "Blog", "Merch", "Advertise", "About"].map((page) => (
+            <h3 className="text-xs font-black text-white uppercase tracking-[0.2em] mb-5">Navigation</h3>
+            <div className="space-y-3">
+              {footerLinks.map((link) => (
                 <Link
-                  key={page}
-                  href={`/${page.toLowerCase()}`}
-                  className="block text-sm text-gray-400 hover:text-white transition-colors"
+                  key={link.href}
+                  href={link.href}
+                  className="block text-sm text-gray-400 hover:text-primary-light transition-colors"
                 >
-                  {page}
+                  {link.label}
                 </Link>
               ))}
             </div>
           </div>
 
-          {/* Social */}
+          {/* Follow Us + Newsletter */}
           <div>
-            <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">Follow Us</h3>
-            <div className="flex gap-4">
+            <h3 className="text-xs font-black text-white uppercase tracking-[0.2em] mb-5">Follow Us</h3>
+            <div className="flex gap-4 mb-8">
               {socialLinks.map((social) => (
                 <a
                   key={social.label}
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-white transition-colors"
+                  className="text-gray-400 hover:text-primary-light transition-colors duration-300"
                   aria-label={social.label}
                 >
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -116,11 +95,43 @@ export default function Footer() {
                 </a>
               ))}
             </div>
+
+            <h3 className="text-xs font-black text-white uppercase tracking-[0.2em] mb-3">Newsletter</h3>
+            {status === "success" ? (
+              <p className="text-green-400 text-sm font-medium">You&apos;re in!</p>
+            ) : (
+              <form onSubmit={handleSubmit} className="flex gap-2">
+                <input
+                  type="email"
+                  required
+                  placeholder="your@email.com"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="flex-1 px-3 py-2 bg-dark border border-dark-border rounded-full text-white placeholder-gray-500 focus:outline-none focus:border-primary text-xs"
+                />
+                <button
+                  type="submit"
+                  disabled={status === "loading"}
+                  className="px-4 py-2 bg-primary hover:bg-primary-light text-white font-black text-xs tracking-wider uppercase rounded-full transition-colors disabled:opacity-50"
+                >
+                  JOIN
+                </button>
+              </form>
+            )}
+            {status === "error" && (
+              <p className="mt-2 text-red-400 text-xs">Try again.</p>
+            )}
           </div>
         </div>
 
-        <div className="mt-10 pt-8 border-t border-dark-border text-center text-sm text-gray-500">
-          &copy; {new Date().getFullYear()} NorthgateTV. All rights reserved.
+        {/* Bottom bar */}
+        <div className="mt-12 pt-8 border-t border-dark-border flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-xs text-gray-500">
+            &copy; {new Date().getFullYear()} NorthgateTV. All rights reserved.
+          </p>
+          <p className="text-xs text-gray-600 font-medium">
+            Built for the culture.
+          </p>
         </div>
       </div>
     </footer>
