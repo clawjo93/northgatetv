@@ -23,12 +23,13 @@ export function getYouTubeId(url: string): string | null {
 export const videos: Video[] = [
   {
     id: "1",
-    title: "What's Your Hottest Take? — Northgate Edition",
-    description: "We hit the streets of Northgate to find out the wildest opinions people are holding onto.",
-    thumbnail: "/images/placeholder-video-1.jpg",
+    title: "NorthgateTV — Latest Drop",
+    description: "Catch the latest from NorthgateTV — street interviews, bar culture, and real nightlife.",
+    thumbnail: "https://img.youtube.com/vi/5eOFFsoYy04/maxresdefault.jpg",
     category: "Street Interviews",
-    date: "2026-03-28",
-    videoUrl: "#",
+    date: "2026-04-05",
+    videoUrl: "https://youtu.be/5eOFFsoYy04",
+    youtubeId: "5eOFFsoYy04",
   },
   {
     id: "2",
