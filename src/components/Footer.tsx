@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -9,9 +12,64 @@ const socialLinks = [
 ];
 
 export default function Footer() {
+  const [email, setEmail] = useState("");
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+
+  async function handleSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    setStatus("loading");
+    try {
+      const res = await fetch("/api/newsletter", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+      if (res.ok) {
+        setStatus("success");
+        setEmail("");
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
+  }
+
   return (
     <footer className="bg-dark border-t border-dark-border">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      {/* Newsletter signup */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-8">
+        <div className="bg-primary/10 border border-primary/20 rounded-xl p-6 md:p-8 text-center">
+          <h3 className="text-xl md:text-2xl font-bold text-white">Stay in the loop</h3>
+          <p className="mt-2 text-sm text-gray-400">Get the latest videos, events, and exclusive content straight to your inbox.</p>
+          {status === "success" ? (
+            <p className="mt-4 text-green-400 font-medium">You&apos;re in! Check your inbox.</p>
+          ) : (
+            <form onSubmit={handleSubmit} className="mt-4 flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+              <input
+                type="email"
+                required
+                placeholder="your@email.com"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="flex-1 px-4 py-2.5 bg-dark border border-dark-border rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-primary transition-colors text-sm"
+              />
+              <button
+                type="submit"
+                disabled={status === "loading"}
+                className="px-5 py-2.5 bg-primary hover:bg-primary-light text-white font-medium rounded-lg transition-colors disabled:opacity-50 text-sm"
+              >
+                {status === "loading" ? "Joining..." : "Subscribe"}
+              </button>
+            </form>
+          )}
+          {status === "error" && (
+            <p className="mt-2 text-red-400 text-sm">Something went wrong. Try again.</p>
+          )}
+        </div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Brand */}
           <div>
@@ -19,8 +77,7 @@ export default function Footer() {
               <Image src="/logo.png" alt="NorthgateTV" width={56} height={56} className="h-12 w-auto" />
             </Link>
             <p className="mt-3 text-sm text-gray-400">
-              College Station&apos;s #1 nightlife and street interview content brand.
-              College Station&apos;s #1 nightlife and street interview content brand.
+              Nightlife and street interview content brand. Real stories from the strip.
             </p>
           </div>
 
@@ -63,7 +120,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-10 pt-8 border-t border-dark-border text-center text-sm text-gray-500">
-          &copy; {new Date().getFullYear()} NorthgateTV. All rights reserved. Not affiliated with Texas A&amp;M University.
+          &copy; {new Date().getFullYear()} NorthgateTV. All rights reserved.
         </div>
       </div>
     </footer>

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import VideoCard from "@/components/VideoCard";
 import BlogCard from "@/components/BlogCard";
 import EmailSignup from "@/components/EmailSignup";
@@ -12,16 +13,21 @@ export default function Home() {
   return (
     <>
       {/* Hero */}
-      <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/20 via-dark/80 to-dark z-10" />
-        <div className="absolute inset-0 bg-gray-900 opacity-30" />
+      <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-primary/30 via-dark/90 to-dark z-10" />
+        <div className="absolute inset-0 bg-black opacity-50" />
         <div className="relative z-20 text-center px-4 max-w-4xl mx-auto">
-          <h1 className="text-5xl md:text-7xl font-bold tracking-tight">
-            <span className="text-white">Northgate</span>
-            <span className="text-primary">TV</span>
-          </h1>
-          <p className="mt-4 text-lg md:text-xl text-gray-300 max-w-2xl mx-auto">
-            College Station&apos;s #1 nightlife and street interview content brand. Made for Aggies, by Aggies.
+          <div className="flex justify-center mb-6">
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 bg-red-600/90 text-white text-sm font-bold uppercase tracking-wider rounded-full animate-pulse">
+              <span className="w-2 h-2 bg-white rounded-full" />
+              LIVE
+            </span>
+          </div>
+          <div className="flex justify-center mb-4">
+            <Image src="/logo.png" alt="NorthgateTV" width={120} height={120} className="h-24 w-auto" />
+          </div>
+          <p className="mt-4 text-lg md:text-2xl text-gray-300 max-w-2xl mx-auto font-medium">
+            Street interviews. Bar culture. Real nightlife.
           </p>
           <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
             <Link
@@ -37,23 +43,6 @@ export default function Home() {
               Shop Merch
             </Link>
           </div>
-        </div>
-      </section>
-
-      {/* Stats */}
-      <section className="border-y border-dark-border bg-dark-card">
-        <div className="max-w-7xl mx-auto px-4 py-8 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-          {[
-            { label: "YouTube Subscribers", value: "25K+" },
-            { label: "TikTok Followers", value: "50K+" },
-            { label: "Videos Published", value: "200+" },
-            { label: "Instagram Followers", value: "15K+" },
-          ].map((stat) => (
-            <div key={stat.label}>
-              <p className="text-2xl md:text-3xl font-bold text-white">{stat.value}</p>
-              <p className="text-sm text-gray-400 mt-1">{stat.label}</p>
-            </div>
-          ))}
         </div>
       </section>
 
@@ -95,7 +84,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Email Signup */}
+      {/* Email Signup — just above footer */}
       <section className="max-w-7xl mx-auto px-4 py-16">
         <EmailSignup />
       </section>

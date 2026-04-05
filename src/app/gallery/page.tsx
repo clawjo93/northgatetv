@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Gallery",
-  description: "Photos from the streets of Northgate — nightlife, game days, and behind the scenes with NorthgateTV.",
+  description: "Photos from the streets of Northgate — nightlife, events, and behind the scenes with NorthgateTV.",
   openGraph: {
     title: "Gallery | NorthgateTV",
     description: "Photos from the streets of Northgate.",
@@ -16,20 +16,33 @@ export default function GalleryPage() {
       <h1 className="text-3xl md:text-4xl font-bold text-white">Gallery</h1>
       <p className="mt-2 text-gray-400">Snapshots from the streets of Northgate.</p>
 
+      <div className="mt-6 bg-dark-card border border-primary/30 rounded-lg p-6 text-center">
+        <p className="text-lg text-gray-300">
+          📸 Gallery coming soon — follow us on Instagram{" "}
+          <a
+            href="https://instagram.com/northgatetv"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-primary-light hover:text-white transition-colors font-semibold"
+          >
+            @northgatetv
+          </a>{" "}
+          for the latest
+        </p>
+      </div>
+
       <div className="mt-8 columns-1 sm:columns-2 lg:columns-3 gap-4 space-y-4">
         {galleryImages.map((img) => (
           <div
             key={img.id}
-            className="break-inside-avoid bg-dark-card rounded-lg overflow-hidden border border-dark-border"
+            className="break-inside-avoid bg-dark-card rounded-lg overflow-hidden border-2 border-primary/20"
           >
             <div
-              className="bg-gray-800"
+              className="bg-gray-900"
               style={{ aspectRatio: parseInt(img.id) % 3 === 0 ? "3/4" : parseInt(img.id) % 2 === 0 ? "4/3" : "1/1" }}
             >
-              <div className="w-full h-full bg-gradient-to-br from-primary/20 to-gray-800 flex items-center justify-center">
-                <svg className="w-10 h-10 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M3.75 21h16.5A2.25 2.25 0 0022.5 18.75V5.25A2.25 2.25 0 0020.25 3H3.75A2.25 2.25 0 001.5 5.25v13.5A2.25 2.25 0 003.75 21z" />
-                </svg>
+              <div className="w-full h-full bg-gradient-to-br from-primary/10 to-gray-900 flex items-center justify-center p-4">
+                <p className="text-gray-500 text-sm text-center font-medium">{img.caption}</p>
               </div>
             </div>
             <div className="p-3">

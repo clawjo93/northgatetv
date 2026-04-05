@@ -3,10 +3,10 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Advertise",
-  description: "Advertise your bar, restaurant, or business with NorthgateTV. Reach 50K+ Texas A&M students through video, social, and more.",
+  description: "Advertise your bar, restaurant, or business with NorthgateTV. Reach an engaged nightlife audience through video, social, and more.",
   openGraph: {
     title: "Advertise with NorthgateTV",
-    description: "Reach 50K+ Texas A&M students with NorthgateTV advertising.",
+    description: "Reach an engaged nightlife audience with NorthgateTV advertising.",
   },
 };
 
@@ -44,21 +44,20 @@ export default function AdvertisePage() {
       <div className="text-center max-w-3xl mx-auto">
         <h1 className="text-3xl md:text-4xl font-bold text-white">Advertise with NorthgateTV</h1>
         <p className="mt-4 text-lg text-gray-400">
-          Reach the Texas A&amp;M audience where they actually pay attention — on their phones, on Northgate, and on game day.
+          Reach a local, engaged nightlife audience where they actually pay attention — on their phones and out on the strip.
         </p>
       </div>
 
-      {/* Stats */}
-      <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4">
+      {/* Why advertise */}
+      <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-4">
         {[
-          { value: "50K+", label: "Total Followers" },
-          { value: "500K+", label: "Monthly Views" },
-          { value: "18-24", label: "Avg. Age Range" },
-          { value: "85%", label: "College Station Based" },
-        ].map((stat) => (
-          <div key={stat.label} className="bg-dark-card border border-dark-border rounded-lg p-4 text-center">
-            <p className="text-2xl font-bold text-white">{stat.value}</p>
-            <p className="text-sm text-gray-400 mt-1">{stat.label}</p>
+          { label: "Local Audience", desc: "Our content reaches the people who go out every week" },
+          { label: "Engaged Community", desc: "Real followers who watch, comment, and share" },
+          { label: "Nightlife Audience", desc: "The exact demographic bars and brands want to reach" },
+        ].map((item) => (
+          <div key={item.label} className="bg-dark-card border border-dark-border rounded-lg p-6 text-center">
+            <p className="text-lg font-bold text-white">{item.label}</p>
+            <p className="text-sm text-gray-400 mt-2">{item.desc}</p>
           </div>
         ))}
       </div>

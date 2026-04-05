@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "About",
-  description: "Learn about NorthgateTV — College Station's #1 nightlife and street interview content brand, built for Texas A&M students.",
+  description: "Learn about NorthgateTV — a nightlife and street interview content brand capturing the real Northgate experience.",
   openGraph: {
     title: "About NorthgateTV",
     description: "The story behind NorthgateTV.",
@@ -13,7 +13,7 @@ const crew = [
   { name: "The Creator", role: "Founder & Host", bio: "Started NorthgateTV with a phone and a mission to capture the real Northgate experience." },
   { name: "The Editor", role: "Video Editor", bio: "Turns hours of chaotic footage into content that actually slaps." },
   { name: "The Shooter", role: "Videographer", bio: "Behind the camera catching every wild moment on the strip." },
-  { name: "The Strategist", role: "Social Media", bio: "Makes sure the content reaches every Aggie's feed." },
+  { name: "The Strategist", role: "Social Media", bio: "Makes sure the content reaches every feed." },
 ];
 
 export default function AboutPage() {
@@ -24,13 +24,13 @@ export default function AboutPage() {
         <h1 className="text-3xl md:text-4xl font-bold text-white">About NorthgateTV</h1>
         <div className="mt-6 space-y-4 text-gray-300 leading-relaxed">
           <p>
-            NorthgateTV started with a simple idea: capture the real Northgate experience and share it with every Aggie. What began as a few street interviews on a Thursday night has grown into College Station&apos;s go-to source for nightlife content, bar reviews, and the unfiltered chaos that makes Northgate legendary.
+            NorthgateTV started with a simple idea: capture the real Northgate experience and share it with everyone. What began as a few street interviews on a Thursday night has grown into the go-to source for nightlife content, bar reviews, and the unfiltered chaos that makes Northgate legendary.
           </p>
           <p>
-            We&apos;re not a news outlet. We&apos;re not a production studio. We&apos;re a crew of Texas A&amp;M students who love Northgate and want to document the culture, the energy, and the people that make it special. From game day madness to late-night street interviews, we&apos;re out there every week capturing what it&apos;s really like.
+            We&apos;re not a news outlet. We&apos;re not a production studio. We&apos;re a crew that loves Northgate and wants to document the culture, the energy, and the people that make it special. From game day madness to late-night street interviews, we&apos;re out there every week capturing what it&apos;s really like.
           </p>
           <p>
-            Our content reaches tens of thousands of current and former Aggies across YouTube, TikTok, and Instagram. Whether you&apos;re a freshman trying to figure out where to go or an alum reliving the glory days, NorthgateTV is your window into the heart of Aggie nightlife.
+            Our content reaches tens of thousands of people across YouTube, TikTok, and Instagram. Whether you&apos;re a regular or just visiting, NorthgateTV is your window into the heart of Northgate nightlife.
           </p>
         </div>
       </section>
@@ -39,7 +39,7 @@ export default function AboutPage() {
       <section className="mt-16">
         <h2 className="text-2xl font-bold text-white">Our Mission</h2>
         <p className="mt-4 text-gray-300 leading-relaxed">
-          To be the definitive content brand for Northgate and Texas A&amp;M nightlife — entertaining, authentic, and always by Aggies, for Aggies.
+          To be the definitive nightlife content brand for Northgate — entertaining, authentic, and always real.
         </p>
       </section>
 

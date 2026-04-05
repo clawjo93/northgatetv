@@ -6,13 +6,25 @@ export interface Video {
   category: "Street Interviews" | "Bar Reviews" | "Game Day" | "Events";
   date: string;
   videoUrl: string;
+  youtubeId?: string;
+}
+
+export function getYouTubeId(url: string): string | null {
+  const patterns = [
+    /(?:youtube\.com\/watch\?v=|youtube\.com\/embed\/|youtube\.com\/v\/|youtu\.be\/)([a-zA-Z0-9_-]{11})/,
+  ];
+  for (const pattern of patterns) {
+    const match = url.match(pattern);
+    if (match) return match[1];
+  }
+  return null;
 }
 
 export const videos: Video[] = [
   {
     id: "1",
     title: "What's Your Hottest Take? — Northgate Edition",
-    description: "We hit the streets of Northgate to find out the wildest opinions Aggies are holding onto.",
+    description: "We hit the streets of Northgate to find out the wildest opinions people are holding onto.",
     thumbnail: "/images/placeholder-video-1.jpg",
     category: "Street Interviews",
     date: "2026-03-28",
@@ -29,8 +41,8 @@ export const videos: Video[] = [
   },
   {
     id: "3",
-    title: "Game Day Northgate: A&M vs LSU Tailgate Madness",
-    description: "The energy on Northgate before the LSU game was INSANE. Here's what went down.",
+    title: "Game Day Northgate: Tailgate Madness",
+    description: "The energy on Northgate before game day was INSANE. Here's what went down.",
     thumbnail: "/images/placeholder-video-3.jpg",
     category: "Game Day",
     date: "2026-03-14",
@@ -47,8 +59,8 @@ export const videos: Video[] = [
   },
   {
     id: "5",
-    title: "Are You Smarter Than an Aggie? Street Quiz",
-    description: "We quizzed random Aggies on campus trivia. The results were... interesting.",
+    title: "Street Quiz: How Smart Are You Really?",
+    description: "We quizzed random people on the street. The results were... interesting.",
     thumbnail: "/images/placeholder-video-5.jpg",
     category: "Street Interviews",
     date: "2026-02-28",
@@ -65,8 +77,8 @@ export const videos: Video[] = [
   },
   {
     id: "7",
-    title: "Midnight Yell From the Streets of Northgate",
-    description: "Midnight Yell is a tradition — but have you seen it from Northgate?",
+    title: "Midnight on the Streets of Northgate",
+    description: "Late night on Northgate hits different — we captured it all.",
     thumbnail: "/images/placeholder-video-7.jpg",
     category: "Game Day",
     date: "2026-02-14",
