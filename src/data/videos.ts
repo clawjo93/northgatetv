@@ -33,12 +33,13 @@ export const videos: Video[] = [
   },
   {
     id: "2",
-    title: "Ranking Every Bar on Northgate (Honest Review)",
-    description: "We went to every single bar on Northgate in one night. Here's our honest ranking.",
-    thumbnail: "/images/placeholder-video-2.jpg",
+    title: "NorthgateTV — Bar Reviews",
+    description: "Bar culture, real reviews, and the best spots on Northgate.",
+    thumbnail: "https://img.youtube.com/vi/ltwgkGO2JE4/maxresdefault.jpg",
     category: "Bar Reviews",
-    date: "2026-03-21",
-    videoUrl: "#",
+    date: "2026-04-05",
+    videoUrl: "https://youtu.be/ltwgkGO2JE4",
+    youtubeId: "ltwgkGO2JE4",
   },
   {
     id: "3",
