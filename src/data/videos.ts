@@ -53,12 +53,13 @@ export const videos: Video[] = [
   },
   {
     id: "4",
-    title: "Northgate After Dark: Spring Break Edition",
-    description: "Spring break on Northgate hit different this year. We captured it all.",
-    thumbnail: "/images/placeholder-video-4.jpg",
+    title: "NorthgateTV — Nightlife",
+    description: "Northgate after dark. The real nightlife, unfiltered.",
+    thumbnail: "https://img.youtube.com/vi/D6Fn_8T31x8/maxresdefault.jpg",
     category: "Events",
-    date: "2026-03-07",
-    videoUrl: "#",
+    date: "2026-04-05",
+    videoUrl: "https://youtu.be/D6Fn_8T31x8",
+    youtubeId: "D6Fn_8T31x8",
   },
   {
     id: "5",
