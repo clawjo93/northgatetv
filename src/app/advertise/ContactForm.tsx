@@ -82,26 +82,12 @@ export default function ContactForm() {
         </div>
       </div>
       <div>
-        <label htmlFor="package" className="block text-sm font-medium text-gray-300 mb-1">Package Interest</label>
-        <select
-          id="package"
-          name="package"
-          required
-          className="w-full px-4 py-3 bg-dark border border-dark-border rounded-lg text-white focus:outline-none focus:border-primary transition-colors"
-        >
-          <option value="">Select a package</option>
-          <option value="story">Story Feature ($75–$150)</option>
-          <option value="feed">Feed Post ($200–$500)</option>
-          <option value="monthly">Monthly Partner ($500–$1,500/mo)</option>
-          <option value="title">Title Sponsor ($1,000–$3,000/mo)</option>
-        </select>
-      </div>
-      <div>
-        <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-1">Message</label>
+        <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-1">Tell us about your business</label>
         <textarea
           id="message"
           name="message"
-          rows={4}
+          rows={5}
+          placeholder="What kind of advertising are you interested in? Any upcoming events or promotions?"
           className="w-full px-4 py-3 bg-dark border border-dark-border rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-primary transition-colors resize-none"
         />
       </div>

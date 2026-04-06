@@ -20,12 +20,12 @@ export default function GalleryPage() {
         <p className="text-lg text-gray-300">
           📸 Gallery coming soon — follow us on Instagram{" "}
           <a
-            href="https://instagram.com/northgatetv"
+            href="https://instagram.com/northgatestv"
             target="_blank"
             rel="noopener noreferrer"
             className="text-primary-light hover:text-white transition-colors font-semibold"
           >
-            @northgatetv
+            @northgatestv
           </a>{" "}
           for the latest
         </p>

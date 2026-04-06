@@ -11,25 +11,37 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: "NorthgateTV — Street Interviews & Nightlife",
-    template: "%s | NorthgateTV",
+    default: "Northgate TV | College Station's Local Media Platform",
+    template: "%s | Northgate TV",
   },
   description:
-    "Street interviews, bar culture, and real nightlife content.",
+    "Northgate TV is College Station's #1 local media platform. Street interviews, nightlife coverage, and local business spotlights reaching 450,000+ monthly viewers in Bryan/College Station TX.",
+  keywords: [
+    "Northgate TV",
+    "Northgate TV College Station",
+    "College Station local media",
+    "Bryan College Station nightlife",
+    "Northgate district Texas A&M",
+    "BCS local media",
+    "College Station street interviews",
+    "Northgate bar scene",
+    "local advertising College Station",
+    "Bryan TX media",
+  ],
   openGraph: {
-    title: "NorthgateTV — Street Interviews & Nightlife",
+    title: "Northgate TV | College Station's Local Media Platform",
     description:
-      "Street interviews, bar culture, and real nightlife content.",
+      "Northgate TV is College Station's #1 local media platform. Street interviews, nightlife coverage, and local business spotlights reaching 450,000+ monthly viewers in Bryan/College Station TX.",
     url: "https://northgatetv.com",
-    siteName: "NorthgateTV",
+    siteName: "Northgate TV",
     locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "NorthgateTV",
+    title: "Northgate TV | College Station's Local Media Platform",
     description:
-      "Street interviews, bar culture, and real nightlife content.",
+      "College Station's #1 local media platform. 450,000+ monthly viewers covering the Northgate district, Texas A&M, and BCS nightlife.",
   },
   metadataBase: new URL("https://northgatetv.com"),
 };

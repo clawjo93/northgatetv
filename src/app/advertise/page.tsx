@@ -10,34 +10,6 @@ export const metadata: Metadata = {
   },
 };
 
-const packages = [
-  {
-    name: "Story Feature",
-    price: "$75 – $150",
-    description: "Featured in our Instagram/TikTok stories with tag and link.",
-    features: ["1 story set (3-5 slides)", "24-hour exposure", "Direct link/tag", "Great for events & promos"],
-  },
-  {
-    name: "Feed Post",
-    price: "$200 – $500",
-    description: "Dedicated post on our main feed with your brand front and center.",
-    features: ["1 feed post (photo or video)", "Permanent on profile", "Caption mention & tag", "High engagement rate"],
-  },
-  {
-    name: "Monthly Partner",
-    price: "$500 – $1,500/mo",
-    description: "Ongoing partnership with regular features across all platforms.",
-    features: ["4 story features/month", "2 feed posts/month", "Video mention", "Priority scheduling"],
-    popular: true,
-  },
-  {
-    name: "Title Sponsor",
-    price: "$1,000 – $3,000/mo",
-    description: "Full integration across all NorthgateTV content and events.",
-    features: ["All Monthly Partner perks", "In-video branding", "Event sponsorship", "Custom content creation", "Analytics report"],
-  },
-];
-
 export default function AdvertisePage() {
   return (
     <div className="max-w-7xl mx-auto px-4 py-12">
@@ -62,42 +34,19 @@ export default function AdvertisePage() {
         ))}
       </div>
 
-      {/* Packages */}
-      <div className="mt-16">
-        <h2 className="text-2xl font-bold text-white text-center mb-8">Advertising Packages</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {packages.map((pkg) => (
-            <div
-              key={pkg.name}
-              className={`bg-dark-card rounded-lg p-6 border ${
-                pkg.popular ? "border-primary" : "border-dark-border"
-              } relative`}
-            >
-              {pkg.popular && (
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-primary text-white text-xs font-medium rounded-full">
-                  Most Popular
-                </div>
-              )}
-              <h3 className="text-lg font-bold text-white">{pkg.name}</h3>
-              <p className="mt-1 text-xl font-bold text-primary-light">{pkg.price}</p>
-              <p className="mt-2 text-sm text-gray-400">{pkg.description}</p>
-              <ul className="mt-4 space-y-2">
-                {pkg.features.map((feature) => (
-                  <li key={feature} className="flex items-start gap-2 text-sm text-gray-300">
-                    <svg className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
-                    {feature}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
+      {/* What we offer */}
+      <div className="mt-16 max-w-3xl mx-auto text-center">
+        <h2 className="text-2xl font-bold text-white mb-4">What We Offer</h2>
+        <p className="text-gray-400 text-lg leading-relaxed">
+          From Instagram and TikTok story features to dedicated feed posts, video integrations, event coverage, and long-term brand partnerships — we work with bars, restaurants, and local businesses to build custom advertising that actually connects with the Northgate crowd.
+        </p>
+        <p className="text-gray-400 text-lg leading-relaxed mt-4">
+          Fill out the form below and we&apos;ll reach out to discuss what works best for your business.
+        </p>
       </div>
 
       {/* Contact Form */}
-      <div className="mt-16 max-w-2xl mx-auto">
+      <div className="mt-12 max-w-2xl mx-auto">
         <h2 className="text-2xl font-bold text-white text-center mb-8">Get in Touch</h2>
         <ContactForm />
       </div>
