@@ -14,7 +14,7 @@ const socialPlatforms = [
         <path d="M23.5 6.5a3 3 0 00-2.1-2.1C19.5 4 12 4 12 4s-7.5 0-9.4.4A3 3 0 00.5 6.5S0 8.7 0 10.9v2.2c0 2.2.5 4.4.5 4.4a3 3 0 002.1 2.1c1.9.4 9.4.4 9.4.4s7.5 0 9.4-.4a3 3 0 002.1-2.1s.5-2.2.5-4.4v-2.2c0-2.2-.5-4.4-.5-4.4zM9.5 15.6V8.4l6.3 3.6-6.3 3.6z" />
       </svg>
     ),
-    href: "https://youtube.com/@northgatestv",
+    href: "https://youtube.com/@northgate_tv",
   },
   {
     name: "TikTok",
@@ -23,7 +23,7 @@ const socialPlatforms = [
         <path d="M12.5 2h3a5 5 0 005 5v3a8 8 0 01-5-1.8V16a6.5 6.5 0 11-5.6-6.4v3.2A3.3 3.3 0 1013 16V2h-.5z" />
       </svg>
     ),
-    href: "https://tiktok.com/@northgatestv",
+    href: "https://tiktok.com/@northgate_tv",
   },
   {
     name: "Instagram",
