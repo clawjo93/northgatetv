@@ -71,31 +71,5 @@ export const videos: Video[] = [
     videoUrl: "https://youtu.be/YBPBIJMn07I",
     youtubeId: "YBPBIJMn07I",
   },
-  {
-    id: "6",
-    title: "The Best Happy Hour Deals on Northgate",
-    description: "We found the best happy hour deals so you don't have to. You're welcome.",
-    thumbnail: "/images/placeholder-video-6.jpg",
-    category: "Bar Reviews",
-    date: "2026-02-21",
-    videoUrl: "#",
-  },
-  {
-    id: "7",
-    title: "Midnight on the Streets of Northgate",
-    description: "Late night on Northgate hits different — we captured it all.",
-    thumbnail: "/images/placeholder-video-7.jpg",
-    category: "Game Day",
-    date: "2026-02-14",
-    videoUrl: "#",
-  },
-  {
-    id: "8",
-    title: "Northgate Block Party Recap",
-    description: "The biggest block party of the semester just happened. Here's the full recap.",
-    thumbnail: "/images/placeholder-video-8.jpg",
-    category: "Events",
-    date: "2026-02-07",
-    videoUrl: "#",
-  },
+
 ];
