@@ -1,10 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
 import VideoCard from "@/components/VideoCard";
-import BlogCard from "@/components/BlogCard";
 import EmailSignup from "@/components/EmailSignup";
 import { videos } from "@/data/videos";
-import { getAllPosts } from "@/lib/blog";
 
 const socialPlatforms = [
   {
@@ -47,7 +45,6 @@ const socialPlatforms = [
 
 export default function Home() {
   const featuredVideos = videos.slice(0, 3);
-  const latestPosts = getAllPosts().slice(0, 3);
 
   return (
     <>
@@ -136,36 +133,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* FROM THE BLOG */}
-      <section className="max-w-7xl mx-auto px-4 py-20">
-        <div className="flex items-center justify-between mb-10">
-          <div className="flex items-center gap-4">
-            <div className="w-1 h-8 bg-primary rounded-full" />
-            <h2 className="text-2xl md:text-3xl font-black text-white uppercase tracking-tight">
-              From the Blog
-            </h2>
-          </div>
-          <Link
-            href="/blog"
-            className="text-sm font-bold text-gray-400 hover:text-primary-light transition-colors tracking-wide uppercase"
-          >
-            Read More &rarr;
-          </Link>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {latestPosts.map((post) => (
-            <BlogCard
-              key={post.slug}
-              slug={post.slug}
-              title={post.title}
-              description={post.description}
-              date={post.date}
-              category={post.category}
-              readingTime={post.readingTime}
-            />
-          ))}
-        </div>
-      </section>
+
 
       {/* SOCIAL PROOF */}
       <section className="relative py-16 grain-overlay">
