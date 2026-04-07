@@ -99,6 +99,12 @@ export default function Home() {
             >
               Shop Merch
             </Link>
+            <Link
+              href="/photos"
+              className="px-8 py-3.5 border-2 border-primary-light text-primary-light font-black text-sm tracking-[0.15em] uppercase rounded-full transition-all duration-300 hover:bg-primary-light hover:text-white hover:scale-105"
+            >
+              📸 Get Your Photos
+            </Link>
           </div>
         </div>
 
