@@ -16,9 +16,6 @@ export async function POST(req: Request) {
     status: "subscribed",
     merge_fields: {
       FNAME: name,
-      INSTAGRAM: instagram || "",
-      PHOTODATE: date,
-      PHOTOLOC: location,
     },
     tags: ["photo-request"],
   };
