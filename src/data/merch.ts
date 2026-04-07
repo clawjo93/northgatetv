@@ -27,24 +27,7 @@ export const merchItems: MerchItem[] = [
     category: "Hats",
     shopUrl: "https://northgatetv-shop.fourthwall.com/products/northgate-tv-logo-hat",
   },
-  {
-    id: "3",
-    name: "NorthgateTV Hoodie",
-    description: "Stay warm on those late Northgate nights. Heavyweight fleece. Please note: All items are made to order. Allow 2–3 weeks for production and shipping after your order is placed.",
-    price: 55,
-    image: "/images/merch-hoodie.jpg",
-    category: "Hoodies",
-    shopUrl: "#",
-  },
-  {
-    id: "4",
-    name: "NorthgateTV Koozie Pack (4)",
-    description: "Keep your drinks cold with NorthgateTV koozies. Pack of 4. Please note: All items are made to order. Allow 2–3 weeks for production and shipping after your order is placed.",
-    price: 15,
-    image: "/images/merch-koozie.jpg",
-    category: "Accessories",
-    shopUrl: "#",
-  },
+
   {
     id: "5",
     name: "Northgate TV — Logo Sticker",
@@ -54,13 +37,5 @@ export const merchItems: MerchItem[] = [
     category: "Accessories",
     shopUrl: "https://northgatetv-shop.fourthwall.com/products/northgate-tv-logo-sticker",
   },
-  {
-    id: "6",
-    name: "NorthgateTV Dad Hat",
-    description: "Relaxed fit dad hat with embroidered logo. One size fits all. Please note: All items are made to order. Allow 2–3 weeks for production and shipping after your order is placed.",
-    price: 28,
-    image: "/images/merch-dadhat.jpg",
-    category: "Hats",
-    shopUrl: "#",
-  },
+
 ];
