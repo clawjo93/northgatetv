@@ -43,6 +43,7 @@ export default function BlogPage() {
             date={post.date}
             category={post.category}
             readingTime={post.readingTime}
+            image={post.image}
           />
         ))}
       </div>
